@@ -47,5 +47,5 @@ Logs an error if a required environment variable is not present.
 Supported \<type\> conversions are:
 - str -> no conversion
 - list -> convert a CSV to [] (array) object
-- bool -> convert _[Nn0]o?|[Ff]alse_ or _[yY1](es)?|[Tt]rue_ to corresponding boolean object
+- bool -> convert _[Nn0]o?|[Ff]alse_ or _\[yY1\](es)?|[Tt]rue_ to corresponding boolean object
 - int|float -> convert to number object

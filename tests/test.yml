@@ -1,0 +1,8 @@
+---
+var1: env:str:VAR1
+var2: env:list:VAR2
+var3: env:bool:VAR3
+var4: env:bool:VAR4
+var5: env:int:VAR5
+var6: env:float:VAR6
+...

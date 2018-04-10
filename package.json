@@ -1,0 +1,39 @@
+{
+  "name": "uconfload",
+  "version": "0.1.1",
+  "description": "Universal config loader for standalone and containerized apps.",
+  "keywords": [
+    "config",
+    "load",
+    "configload",
+    "cfg",
+    "cfgload",
+    "yaml",
+    "environment",
+    "env",
+    "variable"
+  ],
+  "homepage": "https://github.com/edward2a/uconfload-node",
+  "bugs": "https://github.com/edward2a/uconfload-node",
+  "license": "Apache-2.0",
+  "author": "Eduardo A. Paris Penas <edward2a@gmail.com>",
+  "files": [
+    "package.json",
+    "uconfload.js",
+    "LICENSE",
+    "README.md",
+    "CHANGELOG"
+  ],
+  "main": "uconfload",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/edward2a/uconfload-node.git"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^3.11",
+    "argparse": "^1.0"
+  }
+}

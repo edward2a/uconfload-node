@@ -1,6 +1,6 @@
 {
   "name": "uconfload",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Universal config loader for standalone and containerized apps.",
   "keywords": [
     "config",

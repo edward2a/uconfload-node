@@ -50,7 +50,7 @@ function loadEnv(cfg_obj){
 	for (const [key, value] of Object.entries(cfg_obj)) {
 
 		// Nested dict (object) iterator
-		if (typeof(value) === 'object') { loadEnv(value); }
+		if (typeof(value) === 'object' && value !== null) { loadEnv(value); }
 
 		else if (typeof(value) === 'string' && value.startsWith('env')) {
 

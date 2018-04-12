@@ -33,16 +33,16 @@ The following functions are available as part of the package:
 - loadEnv
 
 ### loadArgs
-Parse command line arguments. Only '-c|--config' supported at the moment, to indicate where the config file is located.
+Parse command line arguments. Only '-c|--config' supported at the moment, to indicate where the config file is located.  
 Returns a Namespace object.
 
 ### loadConfig
-Read and (YAML)parse the config file.
+Read and (YAML)parse the config file.  
 Returns a dictionary (associative array; hash; dict; etc.) object.
 
 ### loadEnv
-Parse the passed object and update the keys starting with 'env:\<type\>:' with the corresponding environment variable.
-Logs an error if a required environment variable is not present.
+Parse the passed object and update the keys starting with 'env:\<type\>:' with the corresponding environment variable.  
+Logs an error if a required environment variable is not present, exits 1 if errors.
 
 Supported \<type\> conversions are:
 - str -> no conversion

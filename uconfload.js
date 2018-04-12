@@ -40,9 +40,12 @@ function loadConfig(cfg_file){
 }
 
 
-function loadEnv(cfg_obj){
+function loadEnv(cfg_obj, inner=false){
+
+	let e = 0;
 
 	// Regex matchers
+	var envVarId = new RegExp('env:[a-z]+?:')
 	var boolFalse = new RegExp('^([Nn0]o?|[Ff]alse)$');
 	var boolTrue = new RegExp('^([yY1](es)?|[Tt]rue)$');
 	var numberRegex = new RegExp('env:(int|float):')
@@ -50,11 +53,17 @@ function loadEnv(cfg_obj){
 	for (const [key, value] of Object.entries(cfg_obj)) {
 
 		// Nested dict (object) iterator
-		if (typeof(value) === 'object' && value !== null) { loadEnv(value); }
+		if (typeof(value) === 'object' && value !== null) { e + loadEnv(value, true); }
 
 		else if (typeof(value) === 'string' && value.startsWith('env')) {
 
 			try {
+
+				// Handle undefined variables
+				if (! process.env[value.replace(envVarId, '')]) {
+					e++
+					throw `Configuration missing in process environment: ${value}`
+				}
 
 				// String handler
 				if (value.startsWith('env:str:')) {
@@ -84,8 +93,12 @@ function loadEnv(cfg_obj){
 			} // end try
 
 			catch(error) {
-				console.error(error); }
+				console.error(error);
+			}
 
 		} // end else if
 	} // end for
+
+	if (inner == true) { return e; }
+	if (e > 0) { process.exit(1) }
 }

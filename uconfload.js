@@ -100,5 +100,5 @@ function loadEnv(cfg_obj, inner=false){
 	} // end for
 
 	if (inner == true) { return e; }
-	if (e > 0) { process.exit(1) }
+	if (e > 0) { process.exit(1); }
 }

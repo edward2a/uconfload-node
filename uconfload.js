@@ -55,7 +55,7 @@ function loadEnv(cfg_obj, inner=false){
 		// Nested dict (object) iterator
 		if (typeof(value) === 'object' && value !== null) { e + loadEnv(value, true); }
 
-		else if (typeof(value) === 'string' && value.startsWith('env')) {
+		else if (typeof(value) === 'string' && value.startsWith('env:')) {
 
 			try {
 
